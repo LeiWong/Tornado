@@ -1,12 +1,13 @@
-#coding:utf-8
+# coding:utf-8
 import tornado.web
 import tornado.ioloop
 import tornado.httpserver
-import tornado.options# self-define command line module
+import tornado.options  # self-define command line module
 import json
 from tornado.web import RequestHandler
 import torndb
-#self-define port by command line
+
+# self-define port by command line
 tornado.options.define("port",type=int,default=8000,help="define port")
 class BaseHandler(RequestHandler):
 
@@ -67,15 +68,15 @@ class Application(tornado.web.Application):
                 password="mysql"
                 )
 if __name__ == '__main__':
-    #parse self-define options
+    # parse self-define options
     tornado.options.parse_command_line()
     app = Application([
         (r'/',IndexHandler),
         (r'/house',HouseHandler)
         ],debug=True)
-    #app.listen(8000)
+    # app.listen(8000)
     http_server = tornado.httpserver.HTTPServer(app)
     http_server.listen(tornado.options.options.port)
-    #http_server.bind(8000)
-    #http_server.start(0)
+    # http_server.bind(8000)
+    # http_server.start(0)
     tornado.ioloop.IOLoop.current().start()
