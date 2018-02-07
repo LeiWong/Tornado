@@ -7,7 +7,7 @@
 
 2.mkdir projectname
 
-3. cd projectname
+3.cd projectname
 
 4.pipenv install --three   // --three means python3 environment
 
