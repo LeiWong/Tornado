@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+
+    <script src="/static/jquery-1.12.4.js"></script>
+    <script>
+        INDEX = 0;
+
+        function get_message(){
+            $.ajax({
+                url: '/msg.html',
+                type: 'get',
+                data: {'index': INDEX},
+                dataType: 'json',
+                success: function (arg) {
+                    $.each(arg, function(k,v){
+                        INDEX +=1;
+                        var tag = document.createElement('p');
+                        tag.innerHTML = v.content;
+                        $('#container').append(tag);
+                    });
+                    get_message()
+                }
+            })
+        }
+
+        get_message()
+    </script>
+</body>
+</html>
