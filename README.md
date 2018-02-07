@@ -1,16 +1,20 @@
-# Tornado
-tornado project about sharing
+
+# weixin chat practice with tornado
+
 # build virtual environment
-## sudo apt-get install pipenv
 
-## pipenv --three venv
+1.sudo apt-get install pipenv
 
-## pipenv install tornado
+2.mkdir projectname
 
-## genrate virtualenv file
+3. cd projectname
 
-## pipinv lock
+4.pipenv install --three   // --three means python3 environment
 
-##  list install package
+5.pipenv install tornado
 
-## pipinv graph
+6.genrate virtualenv file
+
+7.pipinv lock
+
+8.pipinv graph  // list install package
