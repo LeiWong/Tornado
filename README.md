@@ -1,7 +1,7 @@
 
 # weixin chat practice with tornado
 
-# build virtual environment
+# use pipenv build virtual environment
 
 1.sudo apt-get install pipenv
 
